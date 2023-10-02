@@ -1,10 +1,10 @@
 import random
 
-nomes = ['Ana', 'João', 'Maria', 'Pedro', 'Julia', 'Lucas', 'Beatriz', 'Guilherme', 'Isabela', 'Matheus',
+nomes = ['Ana', 'Joao', 'Maria', 'Pedro', 'Julia', 'Lucas', 'Beatriz', 'Guilherme', 'Isabela', 'Matheus',
          'Sophia', 'Rafael', 'Laura', 'Gabriel', 'Manuela', 'Leonardo', 'Valentina', 'Felipe', 'Luiza', 'Enzo']
 
 sobrenomes = ["Silva", "Santos", "Oliveira", "Souza", "Rodrigues", "Ferreira", "Almeida", "Pereira", "Gomes", "Costa",
-              "Carvalho", "Martins", "Ribeiro", "Lima", "Araújo", "Cruz", "Mendes", "Nascimento", "Fernandes", "Cardoso"]
+              "Carvalho", "Martins", "Ribeiro", "Lima", "Araujo", "Cruz", "Mendes", "Nascimento", "Fernandes", "Cardoso"]
 
 # Gerar uma idade aleatória entre 16 e 69 anos
 def gerar_idade():
