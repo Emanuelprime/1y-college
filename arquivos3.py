@@ -2,7 +2,7 @@ def arquivo_copiar(arquivo_source, arquivo_destination):
     try:
         with open(arquivo_source, 'r') as source, open(arquivo_destination, 'w') as destination:
             for linha in source:
-                # Verifica se a linha não é um comentário (não começa com //)
+                #verificar se a linha não é um comentário (não começa com #)
                 if not linha.strip().startswith('#'):
                     destination.write(linha)
         print(f"Conteúdo do arquivo '{arquivo_source}' copiado para '{arquivo_destination}' (ignorando comentários).")
