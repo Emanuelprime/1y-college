@@ -1,7 +1,7 @@
-def alterar_nota(arq_alunos, aluno, nota_antiga, nova_nota):
+def alterar_nota(media, aluno, nota_antiga, nova_nota):
     try:
         #abrir o arquivo para leitura
-        with open(arq_alunos, 'r') as arquivo:
+        with open(media, 'r') as arquivo:
             linhas = arquivo.readlines()
 
         #procurar o aluno pelo nome
@@ -18,7 +18,7 @@ def alterar_nota(arq_alunos, aluno, nota_antiga, nova_nota):
             return
 
         #reabre o arquivo para escrita e reescrever as linhas atualizadas
-        with open(arq_alunos, 'w') as arquivo:
+        with open(media, 'w') as arquivo:
             arquivo.writelines(linhas)
 
         print(f"A nota do aluno '{aluno}' foi alterada com sucesso.")
@@ -28,10 +28,10 @@ def alterar_nota(arq_alunos, aluno, nota_antiga, nova_nota):
         print(f"Ocorreu um erro: {str(e)}")
 
 if __name__ == "__main__":
-    arq_alunos = "alunos.txt"  #nome do arquivo com os nomes dos alunos
+    media = "media.txt"  #nome do arquivo com os nomes dos alunos e as notas
 
     aluno = input("Digite o nome do aluno para alterar a nota: ")
     nota_antiga = input("Digite a nota antiga: ")
     nova_nota = input("Digite a nova nota: ")
 
-    alterar_nota(arq_alunos, aluno, nota_antiga, nova_nota)
+    alterar_nota(media, aluno, nota_antiga, nova_nota)
