@@ -2,7 +2,7 @@ def calcular_media(notas_str):
     notas = [float(nota) for nota in notas_str.split()]
     return sum(notas) / len(notas)
 
-def gerar_arquivo_com_medias():
+def arquivo_medias():
     arquivo_alunos = "alunos.txt" 
     arquivo_notas = "nota.txt"   
     arquivo_medias = "media.txt" 
@@ -20,7 +20,7 @@ def gerar_arquivo_com_medias():
         print(f"Ocorreu um erro: {str(e)}")
 
 if __name__ == "__main__":
-    gerar_arquivo_com_medias()
+    arquivo_medias()
 
 
 
