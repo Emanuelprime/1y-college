@@ -1,37 +1,33 @@
-def alterar_nota(media, aluno, nota_antiga, nova_nota):
+def alterar_nota(arquivo_medias, nome_aluno, nova_nota):
     try:
-        #abrir o arquivo para leitura
-        with open(media, 'r') as arquivo:
+        with open(arquivo_medias, 'r') as arquivo:
             linhas = arquivo.readlines()
 
-        #procurar o aluno pelo nome
         encontrado = False
         for i, linha in enumerate(linhas):
-            if linha.strip() == aluno:
-                #encontrou o aluno, agora substituir a nota antiga pela nova
-                linhas[i + 1] = nova_nota + '\n'
+            if nome_aluno in linha:
+                linhas[i] = linha.replace(linha.split(':')[1].strip(), f' {nova_nota}\n')
                 encontrado = True
                 break
 
         if not encontrado:
-            print(f"Aluno '{aluno}' não encontrado no arquivo.")
+            print(f"Aluno '{nome_aluno}' não encontrado no arquivo de médias.")
             return
 
-        #reabre o arquivo para escrita e reescrever as linhas atualizadas
-        with open(media, 'w') as arquivo:
+        with open(arquivo_medias, 'w') as arquivo:
             arquivo.writelines(linhas)
 
-        print(f"A nota do aluno '{aluno}' foi alterada com sucesso.")
+        print(f"A nota do aluno '{nome_aluno}' foi alterada com sucesso.")
     except FileNotFoundError:
-        print("O arquivo de alunos não foi encontrado.")
+        print("O arquivo de médias não foi encontrado.")
     except Exception as e:
         print(f"Ocorreu um erro: {str(e)}")
 
 if __name__ == "__main__":
-    media = "media.txt"  #nome do arquivo com os nomes dos alunos e as notas
+    arquivo_medias = "media.txt"  # Nome do arquivo com as médias dos alunos
 
-    aluno = input("Digite o nome do aluno para alterar a nota: ")
-    nota_antiga = input("Digite a nota antiga: ")
+    nome_aluno = input("Digite o nome do aluno para alterar a nota: ")
     nova_nota = input("Digite a nova nota: ")
 
-    alterar_nota(media, aluno, nota_antiga, nova_nota)
+    alterar_nota(arquivo_medias, nome_aluno, nova_nota)
+
