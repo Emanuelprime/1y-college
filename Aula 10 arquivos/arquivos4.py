@@ -4,7 +4,7 @@ def calcular_media(notas):
 
 def gerar_arquivo_com_medias(arquivo_alunos, arquivo_notas, arquivo_medias):
     try:
-        with open(arq_alunos, 'r') as alunos_file, open(arq_notas, 'r') as notas_file, open(arquivo_medias, 'w') as medias_file:
+        with open(arquivo_alunos, 'r') as alunos_file, open(arquivo_notas, 'r') as notas_file, open(arquivo_medias, 'w') as medias_file:
             for nome, notas_str in zip(alunos_file, notas_file):
                 nome = nome.strip()
                 notas = notas_str.split()
@@ -17,9 +17,10 @@ def gerar_arquivo_com_medias(arquivo_alunos, arquivo_notas, arquivo_medias):
         print(f"Ocorreu um erro: {str(e)}")
 
 if __name__ == "__main__":
-    arq_alunos = input("Digite o nome do arquivo com os nomes dos alunos: ")
-    arq_notas = input("Digite o nome do arquivo com as notas dos alunos: ")
+    arquivo_alunos = input("Digite o nome do arquivo com os nomes dos alunos: ")
+    arquivo_notas = input("Digite o nome do arquivo com as notas dos alunos: ")
     arquivo_medias = input("Digite o nome do arquivo de destino para as médias: ")
 
-    gerar_arquivo_com_medias(arq_alunos, arq_notas, arquivo_medias)
+    gerar_arquivo_com_medias(arquivo_alunos, arquivo_notas, arquivo_medias)
+
 
