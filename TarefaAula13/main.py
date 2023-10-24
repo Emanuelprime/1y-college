@@ -1,7 +1,6 @@
 
 from Veiculos import Carro, Moto, Veiculos, Carros, acelerar
 
-# Exemplo de uso
 # Exercicio 1
 c1 = Carros('Fusca', 1938)
 print("Exercício 1:", c1.get_modelo(), c1.get_ano())
