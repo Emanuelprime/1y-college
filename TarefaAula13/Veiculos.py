@@ -16,6 +16,7 @@ class Carros:
     def set_ano(self, ano):
         self.__ano = ano
 
+
 # Veiculos.py
 
 
@@ -49,3 +50,7 @@ class Moto(Veiculos):
         super().descricao()
         print(f"Cilindrada: {self._cilindrada} cc")
         print("Este veículo é uma moto.")
+
+
+def acelerar(veiculos):
+    veiculos._velocidade += 10  # Aumenta a velocidade em 10 km/h
